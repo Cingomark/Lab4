@@ -15,10 +15,16 @@ case "$1" in
             echo "Data: $(date)" >> "$filename"
         done
         ;;
+    --init)
+        CURRENT_DIR=$(pwd)
+        git clone https://github.com/Cingomark/Lab4.git
+        export PATH=$PATH:$CURRENT_DIR
+        ;;
     -h|--help)
-        echo "Dostępne opcje:"
-        echo "  -d, --date         Wyświetla dzisiejszą datę"
-        echo "  -l, --logs [liczba] Tworzy pliki log (domyślnie 100)"
-        echo "  -h, --help         Wyświetla tę pomoc"
+        echo "Dostepne opcje:"
+        echo "  -d, --date         Wyswietla dzisiejsza date"
+        echo "  -l, --logs [liczba] Tworzy pliki log (domyslnie 100)"
+        echo "      --init         Klonuje repozytorium i ustawia zmienna PATH"
+        echo "  -h, --help         Wyswietla te pomoc"
         ;;
 esac
