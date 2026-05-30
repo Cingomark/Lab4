@@ -15,4 +15,10 @@ case "$1" in
             echo "Data: $(date)" >> "$filename"
         done
         ;;
+    --help)
+        echo "Dostępne opcje:"
+        echo "  --date         Wyświetla dzisiejszą datę"
+        echo "  --logs [liczba] Tworzy pliki log (domyślnie 100)"
+        echo "  --help         Wyświetla tę pomoc"
+        ;;
 esac
